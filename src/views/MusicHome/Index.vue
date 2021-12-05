@@ -1,13 +1,20 @@
 <template>
   <el-container>
+    <!-- header标题栏 -->
     <el-header class="el-header">
       <header-bar />
     </el-header>
-  <el-container>
-    <music-sider></music-sider>
-  </el-container>
-    </el-container>
 
+    <el-container>
+      <!-- 侧边导航栏 -->
+      <music-sider />
+
+      <!-- 主题内容 -->
+      <el-main>
+        <router-view class="routerView" :key="$route.fullPath"></router-view>
+      </el-main>
+    </el-container>
+  </el-container>
 </template>
 <script>
 import HeaderBar from "@/components/HeaderBar.vue";

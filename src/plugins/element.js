@@ -41,7 +41,7 @@ import {
   // ElInput,
   // ElInputNumber,
   // ElLink,
-  // ElMain,
+  ElMain,
   ElMenu,
   ElMenuItem,
   ElMenuItemGroup,
@@ -94,4 +94,5 @@ export default (app) => {
   app.use(ElMenu)
   app.use(ElMenuItem)
   app.use(ElMenuItemGroup)
+  app.use(ElMain)
 }
