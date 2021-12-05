@@ -6,6 +6,9 @@ vue create vue-cloud-music
 
 # 按需引入element
 vue add element-plus
+
+# 引入路由组件
+npm install --save vue-router
 ```
 
 ## Project setup

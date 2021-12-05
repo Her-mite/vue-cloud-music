@@ -40,7 +40,7 @@ export default {
 }
 
 .left {
-  width: 210px;
+  width: 110px;
   margin: 0 50px 0 10px;
 }
 
