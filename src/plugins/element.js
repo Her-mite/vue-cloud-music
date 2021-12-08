@@ -12,8 +12,8 @@ import {
   // ElButtonGroup,
   // ElCalendar,
   // ElCard,
-  // ElCarousel,
-  // ElCarouselItem,
+  ElCarousel,
+  ElCarouselItem,
   // ElCascader,
   // ElCascaderPanel,
   // ElCheckbox,
@@ -95,4 +95,6 @@ export default (app) => {
   app.use(ElMenuItem)
   app.use(ElMenuItemGroup)
   app.use(ElMain)
+  app.use(ElCarousel)
+  app.use(ElCarouselItem)
 }

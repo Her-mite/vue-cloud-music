@@ -19,18 +19,7 @@ export default {
   components: {},
   data() {
     return {
-      defaultActive: "",
-      // 用户信息
-      // userInfo: {},
-      // 创建的歌单
-      createdMusicList: [],
-      // 收藏的歌单
-      collectedMusicList: [],
-      // 下载的音乐的信息
-      downloadMusicInfo: {
-        name: "",
-        url: "",
-      },
+      
     };
   },
 };
