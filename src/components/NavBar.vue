@@ -1,4 +1,5 @@
 <template>
+<!-- 个性推荐页面子导航栏 -->
   <div class="navBarContainer">
     <div class="navBar">
       <div
@@ -31,7 +32,6 @@ export default {
     },
   },
   created() {
-    // console.log(this.$route.path);
     // 根据地址判断 activeNum
     this.navBarItem.forEach((item, index) => {
       if (decodeURI(this.$route.path).search(item.path) != -1) {
@@ -44,8 +44,6 @@ export default {
       if (this.activeNum == index) {
         return;
       }
-
-      // console.log(path);
       this.activeNum = index;
       this.$emit("clickBarItem", path);
     },
@@ -70,7 +68,7 @@ export default {
   width: 100%;
   color: rgb(49, 49, 49);
   align-items: center;
-  padding: 10px 0 20px 20px;
+  padding: 10px 0 20px 0;
 }
 
 .barItem {

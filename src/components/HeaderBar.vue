@@ -1,4 +1,5 @@
 <template>
+<!-- 头部最高导航栏 -->
   <div class="headerBar">
       <div class="left">
         <img src="@/assets/img/logo.png" alt="music_logo" />
