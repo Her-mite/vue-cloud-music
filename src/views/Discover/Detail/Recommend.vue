@@ -3,25 +3,22 @@
   <div class="recommandContainer">
     <!-- 轮播图 -->
     <div>
-      
-    <div class="carousel">
-      <el-carousel :interval="4000" type="card" height="180px">
-        <!-- 此处有bug，element-plus的initalIndex需要将el-carousel.js的225行注释调，否则不默认显示第一张图 -->
-        <el-carousel-item v-for="(item, index) in bannerData" :key="index">
-          <img :src="item.imageUrl" alt="" />
-        </el-carousel-item>
-      </el-carousel>
+      <div class="carousel">
+        <el-carousel :interval="4000" type="card" height="180px">
+          <!-- 此处有bug，element-plus的initalIndex需要将el-carousel.js的225行注释调，否则不默认显示第一张图 -->
+          <el-carousel-item v-for="(item, index) in bannerData" :key="index">
+            <img :src="item.imageUrl" alt="" />
+          </el-carousel-item>
+        </el-carousel>
 
-      <!-- 推荐歌单列表 -->
-      <div class="recommendMusicList">
-        <h3 style="marginLeft:10px">推荐歌单<i class="iconfont icon-arrow-right-bold"></i></h3>
-        <list-card
-            :listCardData="musicList"
-        />
-
+        <!-- 推荐歌单列表 -->
+        <div class="recommendMusicList">
+          <h3 style="marginleft: 10px">
+            推荐歌单<i class="iconfont icon-arrow-right-bold"></i>
+          </h3>
+          <list-card :listCardData="musicList" />
+        </div>
       </div>
-    </div>
-
     </div>
   </div>
 </template>
@@ -43,7 +40,7 @@ export default {
   methods: {
     //  获取轮播图数据源
     async getBannerData() {
-        const ctx = getCurrentInstance().appContext.config.globalProperties; // 调用全局方法
+      const ctx = getCurrentInstance().appContext.config.globalProperties; // 调用全局方法
 
       let result = await ctx.$request("/banner");
       this.bannerData = result.data.banners;
@@ -51,11 +48,11 @@ export default {
 
     // 请求推荐歌单数据的前十个
     async getMusicList() {
-        const ctx = getCurrentInstance().appContext.config.globalProperties; // 调用全局方法
+      const ctx = getCurrentInstance().appContext.config.globalProperties; // 调用全局方法
 
-        let result = await ctx.$request("/personalized", { limit: 10 });
-        this.musicList = result.data.result;
-        console.log(this.musicList)
+      let result = await ctx.$request("/personalized", { limit: 10 });
+      this.musicList = result.data.result;
+      console.log(this.musicList);
     },
     // TODO 数据的懒加载， 点击封面的回调执行
     // // 点击歌单封面的回调
