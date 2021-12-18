@@ -60,7 +60,7 @@ export default {
 
 <style>
 .ranklist {
-  padding: 0 10px;
+  padding: -10px 10px;
 }
 .cardTitle {
   font-size: 20px;
