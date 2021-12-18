@@ -32,9 +32,7 @@
 
 <script>
 export default {
-  mounted() {
-    console.log("moutn", this.listDetailItem);
-  },
+
   props: {
     listDetailItem: {
       type: Object,

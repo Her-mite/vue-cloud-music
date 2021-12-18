@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      html,
+      body {
+        /* 保证在手机端能正常展示 */
+        min-width: 1000px; 
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <noscript>

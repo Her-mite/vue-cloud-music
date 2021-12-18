@@ -1,23 +1,22 @@
 <template>
   <!-- 个性推荐页面 -->
-  <div class="recommandContainer">
-    <!-- 轮播图 -->
-    <div>
+  <div class="recommendContainer">
+    <div class="recommend">
+      <!-- 轮播图 -->
       <div class="carousel">
-        <el-carousel :interval="4000" type="card" height="180px">
+        <el-carousel :interval="4000" type="card" height="160px">
           <!-- 此处有bug，element-plus的initalIndex需要将el-carousel.js的225行注释调，否则不默认显示第一张图 -->
           <el-carousel-item v-for="(item, index) in bannerData" :key="index">
             <img :src="item.imageUrl" alt="" />
           </el-carousel-item>
         </el-carousel>
-
-        <!-- 推荐歌单列表 -->
-        <div class="recommendMusicList">
-          <h3 style="marginleft: 10px">
-            推荐歌单<i class="iconfont icon-arrow-right-bold"></i>
-          </h3>
-          <list-card :listCardData="musicList" />
-        </div>
+      </div>
+      <!-- 推荐歌单列表 -->
+      <div class="recommendMusicList">
+        <h3 style="marginleft: 10px">
+          推荐歌单<i class="iconfont icon-arrow-right-bold"></i>
+        </h3>
+        <list-card :listCardData="musicList" />
       </div>
     </div>
   </div>
@@ -52,7 +51,6 @@ export default {
 
       let result = await ctx.$request("/personalized", { limit: 10 });
       this.musicList = result.data.result;
-      console.log(this.musicList);
     },
     // TODO 数据的懒加载， 点击封面的回调执行
     // // 点击歌单封面的回调
@@ -75,22 +73,27 @@ export default {
 }
 
 .recommend {
-  max-width: 1000px;
+  width: 100%;
 }
 .carousel {
+  /* display: flex; */
   width: 100%;
 }
 
 .el-carousel {
   margin: auto;
-  width: 960px;
+  width: 100%;
+
+  /* width: 960px; */
 }
 
 .el-carousel__item {
-  border-radius: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .el-carousel__item img {
+  border-radius: 10px;
   height: 100%;
 }
 
