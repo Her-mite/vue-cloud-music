@@ -14,16 +14,19 @@
         <router-view class="routerView" :key="$route.fullPath"></router-view>
       </el-main>
     </el-container>
+    <bottom-control></bottom-control>
   </el-container>
 </template>
 <script>
 import HeaderBar from "@/components/HeaderBar.vue";
 import MusicSider from "@/views/MusicHome/MusicSider.vue";
+import BottomControl from '@/components/BottomControl/BottomControl.vue';
 
 export default {
   components: {
     HeaderBar,
     MusicSider,
+    BottomControl,
   },
 };
 </script>

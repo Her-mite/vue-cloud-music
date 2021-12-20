@@ -60,7 +60,6 @@ import {
   // ElRow,
   // ElScrollbar,
   // ElSelect,
-  // ElSlider,
   // ElStep,
   // ElSteps,
   // ElSubmenu,
@@ -80,7 +79,8 @@ import {
   // ElUpload,
   // ElInfiniteScroll,
   // ElLoading,
-  // ElMessage,
+  ElMessage,
+  ElSlider,
   // ElMessageBox,
   // ElNotification,
 
@@ -97,4 +97,6 @@ export default (app) => {
   app.use(ElMain)
   app.use(ElCarousel)
   app.use(ElCarouselItem)
+  app.use(ElMessage)
+  app.use(ElSlider)
 }

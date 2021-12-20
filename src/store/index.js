@@ -3,10 +3,14 @@ import { createStore } from 'vuex'
 // Vue.use(Vuex)
 
 const state = {
-    // 音乐的url
-    musicId: '',
     // 音乐的播放状态
     isPlay: false,
+
+
+
+    // 音乐的url
+    musicId: '',
+
     // 当前播放的歌单
     musicList: [],
     // 当前播放歌单的id
@@ -53,7 +57,7 @@ const store = createStore({
         // 更新音乐url
         updateMusicId(state, musicId) {
             state.musicId = musicId;
-            // console.log('updateMusicId');
+            console.log('updateMusicId');
         },
         // 修改播放状态
         changePlayState(state, isPlay) {

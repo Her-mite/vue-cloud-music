@@ -11,7 +11,7 @@
             v-for="(item, index) in listDetailItem.tracks.slice(0, 5)"
             :key="index"
             @click="handleRowClick"
-            @dblclick="handleRowDbClick(officialListDetailItem.id, index)"
+            @dblclick="handleRowDbClick(listDetailItem.id, index)"
           >
             <td class="songIndex">{{ index + 1 }}</td>
             <td class="musicName">{{ item.name }}</td>
@@ -20,7 +20,7 @@
         </table>
         <div
           class="checkAll"
-          @click="clickCheckAll(officialListDetailItem.id)"
+          @click="clickCheckAll(listDetailItem.id)"
           v-show="true"
         >
           查看全部 <i class="iconfont icon-arrow-right-bold"></i>
@@ -43,21 +43,20 @@ export default {
   },
   methods: {
     // 点击行的回调 （选中）
-    handleRowClick(event) {
-      console.log("event", event);
-      // 点击时，事件对象可能是td或tr，这里做下判断
-      //   let path;
-      //   if (event.path[0].localName == "tr") {
-      //     path = event.path[0];
-      //   } else {
-      //     path = event.path[1];
-      //   }
-      //   this.$emit("handleRowClick", path);
-    },
+    // handleRowClick(event) {
+    //   console.log("event", event);
+    //   // 点击时，事件对象可能是td或tr，这里做下判断
+    //   //   let path;
+    //   //   if (event.path[0].localName == "tr") {
+    //   //     path = event.path[0];
+    //   //   } else {
+    //   //     path = event.path[1];
+    //   //   }
+    //   //   this.$emit("handleRowClick", path);
+    // },
     // id 为当前歌单的id index为双击歌曲在歌单的索引
     handleRowDbClick(id, index) {
-      let listId = this.listId;
-      this.$emit("handleRowDbClick", { id, index, listId });
+      this.$emit("handleRowDbClick", { id, index });
     },
   },
 };

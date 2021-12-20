@@ -6,6 +6,7 @@
         v-for="(item, index) in officialListDetail"
         :key="index"
         :listDetailItem="item"
+        @handleRowDbClick="handleRowDbClick"
       />
     </div>
   </div>
@@ -53,6 +54,31 @@ export default {
         musicList.tracks[index].dt = handleMusicTime(item.dt);
       });
       this.officialListDetail.push(musicList);
+    },
+
+    /**
+     * @description 双击点击事件，切换歌曲
+     * @param {id} 歌单编号
+     * @param {index} 歌曲编号
+     */
+    handleRowDbClick({ id, index }) {
+      console.log(id, index);
+      let musicListIndex = this.officialListDetail.findIndex(
+        (item) => item.id == id
+      );
+      // 更换歌曲
+      this.$store.commit(
+        "updateMusicId",
+        this.officialListDetail[musicListIndex].tracks[index].id
+      );
+      // 检测到歌单编号与当前歌单不一致，提交新歌单到vuex
+      if (id != this.$store.state.musicListId) {
+        // 将歌单传到vuex
+        this.$store.commit("updateMusicList", {
+          musicList: this.officialListDetail[musicListIndex].tracks,
+          musicListId: id,
+        });
+      }
     },
   },
 };
