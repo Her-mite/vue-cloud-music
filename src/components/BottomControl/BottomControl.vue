@@ -76,7 +76,7 @@
       <!-- 进度条组件 -->
       <div class="progressBar">
         <!-- 当前播放时间 -->
-        <!-- <span class="currentTime">{{ currentTime / handleMusicTime }}</span> -->
+        <span class="currentTime">{{ currentTime / handleMusicTime }}</span>
         <!-- 进度条 -->
         <el-slider
           class="progressSlider"
@@ -85,11 +85,25 @@
           @change="changeProgress"
           :disabled="musicList.length == 0"
         ></el-slider>
-        <span class="totalTime">{{ duration }}</span>
+        <span class="totalTime">3:30</span>
+        <!-- <span class="totalTime">{{ duration }}</span> -->
       </div>
     </div>
 
-    <div class="musicOther">heella</div>
+    <div class="musicOther">
+      <div class="volumeControl">
+        <i class="iconfont icon-yinliang" @click="changeMutedState"></i>
+        <el-slider
+          class="volumeSlider"
+          v-model="volume"
+          @input="changeVolume"
+          :show-tooltip="false"
+        ></el-slider>
+      </div>
+      <div class="playList" @click="openDrawer">
+        <i class="iconfont icon-bofangliebiao"></i>
+      </div>
+    </div>
   </div>
 </template>
 

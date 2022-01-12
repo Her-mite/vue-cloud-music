@@ -5,8 +5,19 @@ body {
     margin: 0;
     /* zoom:1.25;  */
 }
+
 /* 图标 */
-.iconfont{
+.iconfont {
     margin-right: 5px;
 }
-  
+
+/* 进度条样式 */
+.el-slider__bar {
+    background-color: #ff4e4e !important;
+}
+
+.el-slider__button {
+    border: 1px solid #ccc !important;
+    width: 10px !important;
+    height: 10px !important;
+}
